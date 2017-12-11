@@ -1,17 +1,70 @@
-<section class="property-binding">
+  <!--section class="event-binding">
+  <article>
+   <h3>Event binding</h3>
+   <div>
+       <button (click)="botaoClicado()"
+       class="btn btn-primary">
+       Me clique!
+       </button>
 
-<article>
-  <h3>Interpolation</h3>
-  <p>String renderizada com interpolação: {{ url }}</p>
-  <p>Resultado de 1 + 1 é: {{ 1+1 }}</p>
-  <p>Resultado de 1 + 1 não é {{1 + 1 + getValor()}}</p>
-  <p>Axo Online o melhor do Brasil: {{ cursoAngular && getCurtiCurso() }} </p>
-</article>
+    <br><br>
+       
+    <input type="text"
+     (keyup)="onKeyUp($event)"
+     (keyup.enter)="salvarValor(campoInput.value)"
+     (blur)="salvarValor(campoInput.value)"
+     #campoInput />
 
-<article>
-  <h3> Property Binding</h3>
-  <img [src]="urlImagem">
-</article>
+     <p>Valor atual: {{ valorAtual }}</p>
+     <p>Valor salvo: {{ valorSalvo }}</p>
+
+    <span 
+    (mouseover)="onMouseOverOut()"
+    (mouseout)="onMouseOverOut()">
+    [class.highlight]="isMouseOver">  
+    Passe o mouse sobre mim
+    </span>
+
+   </div>    
+
+</article>     
+</section!-->
+
+<section class="two-way-binding">
+  <article>
+    <h3>Two-way data binding</h3>
+  <div>
+
+    <input type="text" 
+     [value]="nome"
+     (input)="nome = $event.target.value"
+     />
+
+     <input type="text" 
+     [ngModel]="nome"
+     (ngModelChange)="nome = $event"
+     />
+
+    <input type="text" [(ngModel)]="nome">
+
+    <input type="text" bindon-ngModel="nome">
+
+     <p>Você digitou: {{ nome }}</p>
+  </div>
+
+  <div>
+        <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade}} anos de idade</p>
+
+    <input type="text" [(ngModel)]="pessoa.nome">
+    <input type="text" [(ngModel)]="pessoa.idade">
+  
+  </div>
+
+
+
+
+  </article>
+
 
 
 
