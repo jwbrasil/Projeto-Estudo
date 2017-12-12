@@ -49,7 +49,9 @@ nomeDoCurso: string = 'Angular';
   
   }
   
-  
+  onMudouValor(evento){
+    console.log(evento.novoValor);
+  }
   
 
   constructor() { }
